@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class TestNumberService {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		NumberService number = new NumberService();
 		System.out.println("The NumberService Set is empty: "  + number.viewnum());
 		Scanner sc = new Scanner(System.in);
