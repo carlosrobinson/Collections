@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class NumberService {
-	String input = "";
+	int input = 0;
 	private Set<Integer> somenumbers;
 	
 	public   NumberService() {
@@ -16,11 +16,13 @@ public class NumberService {
 	}
 	
 	public void removenum(int num) {
-		somenumbers.remove(num);
+	
+		somenumbers.remove(this.input);
 	}
 	
-	public String input(String input) {
-		return this.input =input;
+	public Integer inputnum(int num) {
+		this.input = num;
+		 return input;
 	}
 	
 	public Set<Integer> viewnum() {

@@ -1,6 +1,7 @@
 package com.example.NumberService;
 
 import java.util.Scanner;
+import java.util.Set;
 
 public class TestNumberService {
 
@@ -17,9 +18,16 @@ public class TestNumberService {
 				number.addnum(Integer.parseInt(sc.nextLine()));
 				System.out.println("Adding number...");
 			}else if(input.equals("remove")) { 
+				Set<Integer> current =  number.viewnum();
 				System.out.println("What number do you wish to remove?");
-				number.removenum(Integer.parseInt(sc.nextLine()));
-				System.out.println("removing number ...");
+				int removenum = Integer.parseInt(sc.nextLine());
+				if(current.contains(removenum)){
+					number.inputnum(removenum);
+					System.out.println("removing number ...");
+					number.removenum(number.inputnum(removenum));
+				}else{
+					System.out.println("Number not found.");
+				}
 			}else if(input.equals("view")) { 
 				System.out.println("Getting Set....");
 				System.out.println(number.viewnum());
@@ -29,6 +37,7 @@ public class TestNumberService {
 				sc.close();
 			}
 			
-		}
+		
 		}
 	}
+}
